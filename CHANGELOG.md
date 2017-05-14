@@ -1,11 +1,21 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
-## 0.1.0
+## 0.2.0 - 2017-05-14
 ### Added
- * FILE: hackernews.tmux - with basic functionality, replaces an instance of `#{headline}` in status-right, and replaces it with an execution call of news.sh 
- * FILE: news.sh - produces a different headline from the [Hackernews](https://news.ycombinator.com) frontpage, over the course of two hours -- that is, it changes headline every 4 minutes.
- * FILE: vars.conf - for now useless, but will contain some variables for customization of the headline field
- * FILE: .gitignore - to ignore .swp files
- * FILE: CHANGELOG.md - to keep a changelong
+ * [FILE] inc.sh - script to increment the offset in vars.conf, so as to go to the next headline.
+ * [FILE] dec.sh - script to decrement the offset in vars.conf, so as to go to the previous headline.
+ * Keybinds to trigger the two scripts above, `Prefix + <` and `Prefix + >` respectively.
+ * Dates on this change log.
+ * **Keybinds** and **Planned Features** sections in README.
+### Changed
+ * Formatting for files in this change log.
+
+## 0.1.0 - 2017-05-13
+### Added
+ * [FILE] hackernews.tmux - with basic functionality, replaces an instance of `#{headline}` in status-right, and replaces it with an execution call of news.sh 
+ * [FILE] news.sh - produces a different headline from the [Hackernews](https://news.ycombinator.com) frontpage, over the course of two hours -- that is, it changes headline every 4 minutes.
+ * [FILE] vars.conf - for now useless, but will contain some variables for customization of the headline field
+ * [FILE] .gitignore - to ignore .swp files
+ * [FILE] CHANGELOG.md - to keep a changelong
  * README.md Installation, Usage, Formatting, Credits and TODO sections

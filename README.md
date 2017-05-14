@@ -42,14 +42,20 @@ Note that the headline cannot be styled, and styling persists after it, so you h
  
 For now, this plugin only works in status-right. Functionality in status-left is going to be implemented in a future update.
 
+## Keybinds
+`Prefix + >` shows the next headline.
+
+`Prefix + <` shows the previous headline.
+
+## Planned Features
+ * Keybind to open new window or pane with current headline article on w3m or specified browser.
+ * status-left support
+ * New format strings for colors, so as to allow easy customization of formatting.
+ * Currently, if the website changes the headline displayed, the script also displays the new headline, resulting in unexpected changes and sometimes duplicates. Implementation of a fix.
+
+
 ## Credits
 This plugin is heavily inspired and modeled after [tmux-battery](https://github.com/tmux-plugins/tmux-battery).
 
 ## TODO
  * Acquire permission to model this file after the tmux-battery README.
- * Eliminate "...in a future update" mentions by including a **Planned features** section.
- * Keybinds for going to next or previous headline.
- * Currently, if the website changes the headline displayed, the script also displays the new headline, resulting in unexpected changes and sometimes duplicates. Implementation of a fix.
- * Keybind to open new window or split with current headline article on w3m or specified browser.
- * status-left support
- * Create new format strings for colors, so as to allow easy customization of formatting.

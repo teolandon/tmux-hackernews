@@ -19,3 +19,6 @@ current_status="$(tmux show-option -gqv status-right)"
 new_status="${current_status/\#\{headline\}/${formatted_headline}}"
 
 tmux set-option -gq status-right "$new_status"
+
+tmux bind \> run "$DIR/scripts/inc.sh"\\\; refresh-client -S
+tmux bind \< run "$DIR/scripts/dec.sh"\\\; refresh-client -S
