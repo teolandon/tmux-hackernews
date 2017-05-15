@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file
 ### Added
  * [FILE] urls.sh - reutrns the URL to the current story.
  * [FILE] compute_index.sh - moved code into here to make it more DRY and organized.
- * Keybind `\<C-h\>` to opening a new tmux window with the currect link on `w3m`.
+ * Keybind `<C-h>` to opening a new tmux window with the currect link on `w3m`.
  * Some comments in main script (hackernews.tmux).
 ### Changed
  * **Planned Features** section in README.md
