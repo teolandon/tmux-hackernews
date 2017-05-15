@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
+## 0.3.1 - 2017-05-15 - HOTFIX
+### Changed
+ * Literally added a single character in `hackernews.tmux` to make the `C-h` keybind work properly.
+
 ## 0.3.0 - 2017-05-15
 ### Added
  * [FILE] urls.sh - reutrns the URL to the current story.

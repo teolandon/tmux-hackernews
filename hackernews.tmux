@@ -31,4 +31,4 @@ tmux set-option -gq status-left "$(getstatus "status-left")"
 tmux bind \> run "$DIR/scripts/inc.sh"\\\; refresh-client -S
 tmux bind \< run "$DIR/scripts/dec.sh"\\\; refresh-client -S
 
-tmux bind C-h new-window "w3m $($DIR/scripts/urls.sh)"
+tmux bind C-h new-window "w3m \$(bash $DIR/scripts/urls.sh)"
