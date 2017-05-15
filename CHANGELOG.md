@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
+## 0.4.0 - 2017-05-15
+### Added
+ * New variables in `vars.conf` for customization of browser and headline width.
+ * [FILE] browser.sh - returns the browser specified in `vars.conf`.
+
 ## 0.3.1 - 2017-05-15 - HOTFIX
 ### Changed
  * Literally added a single character in `hackernews.tmux` to make the `C-h` keybind work properly.

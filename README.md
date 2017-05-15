@@ -36,19 +36,17 @@ set -g status-right ' #{headline} | %d/$m | %H:%M:%S '
 ```
 
 ### Formatting
-The headline format string should be substituted by a headline from [Hackernews](https://news.ycombinator.com). Headlines are cut off at 72 characters. Headlines to be shown are picked from the current top 30 stories in the frontpage, and cycle around in a period of 2 hours, meaning that the displayed headline increments every 4 minutes. Customization will be included in a future update.
+The headline format string should be substituted by a headline from [Hackernews](https://news.ycombinator.com). Headlines are cut off at a character limit specified in the file `vars.conf`, under the variable `max_chars`. Headlines to be shown are picked from the current top 30 stories in the frontpage, and cycle around in a period of 2 hours, meaning that the displayed headline increments every 4 minutes. Customization will be included in a future update.
 
 ## Keybinds
 `Prefix + >` shows the next headline.
 
 `Prefix + <` shows the previous headline.
 
-`Prefix + C-h` opens up a new tmux window with the current article displayed using `w3m`
+`Prefix + C-h` opens up a new tmux window with the current article displayed using the browser program specified in `vars.conf`, under the variable `browser`.
 
 ## Planned Features
- * Allow easy customization of browser, and check if browser program exists.
  * Currently, if the website changes the headline displayed, the script also displays the new headline, resulting in unexpected changes and sometimes duplicates. Implementation of a fix.
- * Easy customization by through vars.conf
  * Checks for every external program used.
 
 
@@ -57,3 +55,4 @@ This plugin is heavily inspired and modeled after [tmux-battery](https://github.
 
 ## TODO
  * Acquire permission to model this file after the tmux-battery README.
+ * Add **Customization** section in this README.

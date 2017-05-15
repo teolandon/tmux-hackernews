@@ -10,9 +10,11 @@ index=`. $DIR/compute_index.sh`
 
 headline=`curl -s https://news.ycombinator.com | grep "<a.*class=\"storylink\"" | sed -e "s/<td.*storylink\">\|<\/a.*\|<td align.*div>\|<td align.*nofollow\">//g" -e "s/^ *//g" -e "${index}q;d"`
 
-if [ -n "${headline:72}" ]
+max_chars=`grep max_chars $DIR/../vars.conf | sed "s/.*=//g"`
+
+if [ -n "${headline:$max_chars}" ]
 then
-  headline=${headline:0:69}'...'
+  headline=${headline:0:$(($max_chars - 3))}'...'
 fi
 
 echo ${index}. ${headline}
