@@ -28,7 +28,7 @@ or wherever your tmux config file is located at.
 
 ## Usage and formatting
 ### Usage
-Include the format string `${headline}` somewhere in status-right, and they should render as the current headline. Example:
+Include the format string `${headline}` somewhere in status-right or status-left, and they should render as the current headline. Example:
 
 ```
 # This is in .tmux.conf
@@ -36,22 +36,20 @@ set -g status-right ' #{headline} | %d/$m | %H:%M:%S '
 ```
 
 ### Formatting
-The headline format string should be substituted by a headline from [Hackernews](https://news.ycombinator.com), in orange background and black font. Headlines are cut off at 72 characters. Headlines to be shown are picked from the current top 30 stories in the frontpage, and cycle around in a period of 2 hours, meaning that the displayed headline increments every 4 minutes. Customization will be included in a future update.
-
-Note that the headline cannot be styled, and styling persists after it, so you have to set foreground and background colors again after it. This behavior is going to be fixed in a future update.
- 
-For now, this plugin only works in status-right. Functionality in status-left is going to be implemented in a future update.
+The headline format string should be substituted by a headline from [Hackernews](https://news.ycombinator.com). Headlines are cut off at 72 characters. Headlines to be shown are picked from the current top 30 stories in the frontpage, and cycle around in a period of 2 hours, meaning that the displayed headline increments every 4 minutes. Customization will be included in a future update.
 
 ## Keybinds
 `Prefix + >` shows the next headline.
 
 `Prefix + <` shows the previous headline.
 
+`Prefix + C-h` opens up a new tmux window with the current article displayed using `w3m`
+
 ## Planned Features
- * Keybind to open new window or pane with current headline article on w3m or specified browser.
- * status-left support
- * New format strings for colors, so as to allow easy customization of formatting.
+ * Allow easy customization of browser, and check if browser program exists.
  * Currently, if the website changes the headline displayed, the script also displays the new headline, resulting in unexpected changes and sometimes duplicates. Implementation of a fix.
+ * Easy customization by through vars.conf
+ * Checks for every external program used.
 
 
 ## Credits

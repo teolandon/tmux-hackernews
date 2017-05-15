@@ -12,13 +12,23 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
 headline="#(bash $DIR/scripts/news.sh)"
 
-formatted_headline="#[fg=colour233,bg=colour208] ${headline} "
+getstatus() { # Takes an argument and returns formatted
+              # status. Tested options are status-right
+  option=$1   # and status-left
 
-current_status="$(tmux show-option -gqv status-right)"
+  current_status="$(tmux show-option -gqv $option)"
 
-new_status="${current_status/\#\{headline\}/${formatted_headline}}"
+  echo "${current_status/\#\{headline\}/${headline}}"
 
-tmux set-option -gq status-right "$new_status"
+}
+
+tmux set-option -gq status-right "$(getstatus "status-right")"
+
+tmux set-option -gq status-left "$(getstatus "status-left")"
+
+# Keybinds; Feel free to customize them
 
 tmux bind \> run "$DIR/scripts/inc.sh"\\\; refresh-client -S
 tmux bind \< run "$DIR/scripts/dec.sh"\\\; refresh-client -S
+
+tmux bind C-h new-window "w3m $($DIR/scripts/urls.sh)"
