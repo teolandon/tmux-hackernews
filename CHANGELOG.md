@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
+## 0.4.1 - 2017-05-15
+### Added
+ * Checks for the current browser. If it doesn't exist, the binding is not set
+
 ## 0.4.0 - 2017-05-15
 ### Added
  * New variables in `vars.conf` for customization of browser and headline width.
