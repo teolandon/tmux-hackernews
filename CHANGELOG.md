@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
+## 0.4.2 - 2017-05-16
+### Changed
+ * `news.sh` now doesn't make an HTTP request if not needed - Most tmux users have the statusbar refresh rate at 1 second, so as to have a nice clock, but making an HTTP request every second is just wrong. The current headline is now stored in `vars.conf`, and only if the index changes, does the script make an HTTP request.
+ * Fixed variable lookup to prevent errors.
+
 ## 0.4.1 - 2017-05-15
 ### Added
  * Checks for the current browser. If it doesn't exist, the binding is not set

@@ -38,6 +38,13 @@ set -g status-right ' #{headline} | %d/$m | %H:%M:%S '
 ### Formatting
 The headline format string should be substituted by a headline from [Hackernews](https://news.ycombinator.com). Headlines are cut off at a character limit specified in the file `vars.conf`, under the variable `max_chars`. Headlines to be shown are picked from the current top 30 stories in the frontpage, and cycle around in a period of 2 hours, meaning that the displayed headline increments every 4 minutes. Customization will be included in a future update.
 
+## Customization
+In order to customize the plugin to your liking, you have to navigate to its directory (`~/.tmux/plugins/tmux-hackernews/` if you used TPM), and edit the `vars.conf` file.
+
+List of variables:
+ * `browser` - Choose your browser by editing this variable. Simply enter the name of your browser as you would enter it in a terminal window. The plugin assumes that your browser takes a URL as an argument and opens it up in a new tab. Default browser is w3m, since it's terminal based, so it will work for people using tmux for ssh sessions, while it is also included in a lot of systems.
+ * `max_chars` - Specify the maximum character width you desire the headline field to take. Any headlines longer than this character width will be truncated with three dots in the end. Fixed width and dynamic width options might be implemented in a future update.
+
 ## Keybinds
 `Prefix + >` shows the next headline.
 
@@ -46,7 +53,7 @@ The headline format string should be substituted by a headline from [Hackernews]
 `Prefix + C-h` opens up a new tmux window with the current article displayed using the browser program specified in `vars.conf`, under the variable `browser`.
 
 ## Planned Features
- * Currently, if the website changes the headline displayed, the script also displays the new headline, resulting in unexpected changes and sometimes duplicates. Implementation of a fix.
+ * Got any new ideas for features? Leave them as an Issue in the Issues page!
 
 ## Credits
 This plugin is heavily inspired and modeled after [tmux-battery](https://github.com/tmux-plugins/tmux-battery).
