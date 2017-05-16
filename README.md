@@ -47,8 +47,6 @@ The headline format string should be substituted by a headline from [Hackernews]
 
 ## Planned Features
  * Currently, if the website changes the headline displayed, the script also displays the new headline, resulting in unexpected changes and sometimes duplicates. Implementation of a fix.
- * Checks for every external program used.
-
 
 ## Credits
 This plugin is heavily inspired and modeled after [tmux-battery](https://github.com/tmux-plugins/tmux-battery).
