@@ -53,6 +53,9 @@ List of variables:
 `Prefix + C-h` opens up a new tmux window with the current article displayed using the browser program specified in `vars.conf`, under the variable `browser`.
 
 ## Planned Features
+ * Switch from curl-ing the whole website to using the API. Will possibly allow for easy implementation of more than 30 headlines.
+ * Pulling headlines from other news sites or at least pages of ycombinator.
+ * Cache whole list of headlines, so that the list doesn't update while the script cycles through it (causes duplicates). Possibly with a refresh keybind.
  * Got any new ideas for features? Leave them as an Issue in the Issues page!
 
 ## Credits
