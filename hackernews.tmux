@@ -35,6 +35,6 @@ browser=$($DIR/scripts/browser.sh)
 
 if [ -n "$browser" ]; then
   if type "$browser" > /dev/null; then
-    tmux bind C-h new-window "$browser \$(bash $DIR/scripts/urls.sh)"
+    tmux bind h new-window "$browser \$(bash $DIR/scripts/urls.sh)"
   fi
 fi

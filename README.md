@@ -50,7 +50,7 @@ List of variables:
 
 `Prefix + <` shows the previous headline.
 
-`Prefix + C-h` opens up a new tmux window with the current article displayed using the browser program specified in `vars.conf`, under the variable `browser`.
+`Prefix + h` opens up a new tmux window with the current article displayed using the browser program specified in `vars.conf`, under the variable `browser`.
 
 ## Planned Features
  * Switch from curl-ing the whole website to using the API. Will possibly allow for easy implementation of more than 30 headlines.

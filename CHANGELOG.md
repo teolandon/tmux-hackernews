@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
+## 0.4.3 - 2017-05-17
+### Changed
+ * Changed default link hotkey to `Prefix + h` instead of `Prefix + C-h`, since C-h is a kinda iffy key with some terminals (seen as backspace). 
+
 ## 0.4.2 - 2017-05-16
 ### Changed
  * `news.sh` now doesn't make an HTTP request if not needed - Most tmux users have the statusbar refresh rate at 1 second, so as to have a nice clock, but making an HTTP request every second is just wrong. The current headline is now stored in `vars.conf`, and only if the index changes, does the script make an HTTP request.
