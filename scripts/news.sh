@@ -26,6 +26,6 @@ then
   headline=${headline:0:$(($max_chars - 3))}'...'
 fi
 
-sed -i "s/headline=.*/headline=${index}. ${headline}/g"
+sed -i "s/headline=.*/headline=${index}. ${headline}/g" $DIR/../vars.conf
 
 echo ${index}. ${headline}
