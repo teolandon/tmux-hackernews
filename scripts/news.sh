@@ -6,12 +6,19 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 # Periodically print out
 # Top 10 Headlines from Hackernews
 
+clean_exit()
+{
+  rm dummy
+  exit
+}
+
 index=`. $DIR/compute_index.sh`
 
 # If headlines file exists and index is not 1, then just read from there
-if [ -r $DIR/../headlines.conf -a $index != 1 ]; then
+touch -d '-2 hours' dummy
+if [ -r $DIR/../headlines.conf -a dummy -ot $DIR/../headlines.conf ]; then
   echo $index. `sed "${index}q;d" $DIR/../headlines.conf`
-  exit
+  clean_exit
 fi
 
 # else, pull from news.ycombinator.com
@@ -24,7 +31,7 @@ headlines=$(echo "$request" | sed -e "s/<td.*storylink\">\|<\/a.*\|<td align.*di
 if [ -z "$headlines" ]
 then
   echo $headlines
-  exit
+  clean_exit
 fi
 
 # links to append
@@ -45,3 +52,4 @@ fi
 sed -i "s/headline=.*/headline=${index}. ${headline}/g" $DIR/../vars.conf
 
 echo ${index}. ${headline}
+clean_exit
