@@ -19,6 +19,11 @@ fi
 
 headline=`curl -s https://news.ycombinator.com | grep "<a.*class=\"storylink\"" | sed -e "s/<td.*storylink\">\|<\/a.*\|<td align.*div>\|<td align.*nofollow\">//g" -e "s/^ *//g" -e "${index}q;d"`
 
+if [ -z $headline ]; then
+  echo $headline
+  exit
+fi
+
 max_chars=`grep max_chars $DIR/../vars.conf | sed "s/.*=//g"`
 
 if [ -n "${headline:$max_chars}" ]

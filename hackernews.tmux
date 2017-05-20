@@ -7,14 +7,15 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 # then formats it, and replaces all #{headline}
 # instances with the formatted headline. 
 
-# NOTE: make more modular, less hardcoding, so
-# that it's more easily configurable.
-
 headline="#(bash $DIR/scripts/news.sh)"
 
-getstatus() { # Takes an argument and returns formatted
-              # status. Tested options are status-right
-  option=$1   # and status-left
+if [ -z $headline]; then
+  headline="Error acquiring headline"
+fi
+
+format_status() { # Takes an argument and returns formatted
+                # status. Tested options are status-right
+  option=$1     # and status-left
 
   current_status="$(tmux show-option -gqv $option)"
 
@@ -22,9 +23,9 @@ getstatus() { # Takes an argument and returns formatted
 
 }
 
-tmux set-option -gq status-right "$(getstatus "status-right")"
+tmux set-option -gq status-right "$(format_status "status-right")"
 
-tmux set-option -gq status-left "$(getstatus "status-left")"
+tmux set-option -gq status-left "$(format_status "status-left")"
 
 # Keybinds; Feel free to customize them
 
