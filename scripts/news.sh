@@ -8,10 +8,10 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
 index=`. $DIR/compute_index.sh`
 
-# if [ -r $DIR/../headlines.conf -a $index != 1 ]; then
-  # echo `sed "${index}q;d" $DIR/../headlines.conf`
-  # exit
-# fi
+if [ -r $DIR/../headlines.conf -a $index != 1 ]; then
+  echo `sed "${index}q;d" $DIR/../headlines.conf`
+  exit
+fi
 
 headlines=$(curl -s https://news.ycombinator.com | grep "<a.*class=\"storylink\"" | sed -e "s/<td.*storylink\">\|<\/a.*\|<td align.*div>\|<td align.*nofollow\">//g" -e "s/^ *//g")
 
