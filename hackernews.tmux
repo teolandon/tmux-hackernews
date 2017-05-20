@@ -9,7 +9,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
 headline="#(bash $DIR/scripts/news.sh)"
 
-if [ -z $headline]; then
+if [ -z $headline ]; then
   headline="Error acquiring headline"
 fi
 
@@ -38,4 +38,6 @@ if [ -n "$browser" ]; then
   if type "$browser" > /dev/null; then
     tmux bind h new-window "$browser \$(bash $DIR/scripts/urls.sh)"
   fi
+elif which xdg-open > /dev/null; then
+  tmux bind h run-shell "xdg-open \$(bash $DIR/scripts/urls.sh)"
 fi

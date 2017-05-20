@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
+## 0.5.1 - 2017-05-20
+### Changed
+ * `browser` variable now doesn't need to be set to something. If empty, attempts to open up website in system's default browser.
+
 ## 0.5.0 - 2017-05-20
 ### Added
  * [FILE] headlines.conf - stores a cache of all headlines and links for 2 hours. Not to be edited. File doesn't initially exist, but gets created.

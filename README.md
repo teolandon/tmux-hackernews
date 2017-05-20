@@ -35,6 +35,8 @@ Include the format string `${headline}` somewhere in status-right or status-left
 set -g status-right ' #{headline} | %d/$m | %H:%M:%S '
 ```
 
+This will display the headline next to date and time, without any formatting.
+
 ### Formatting
 The headline format string should be substituted by a headline from [Hackernews](https://news.ycombinator.com). Headlines are cut off at a character limit specified in the file `vars.conf`, under the variable `max_chars`. Headlines to be shown are picked from the current top 30 stories in the frontpage every 2 hours, and cycle around until new ones get pulled, meaning that the displayed headline increments every 4 minutes. Customization will be included in a future update.
 
@@ -42,7 +44,7 @@ The headline format string should be substituted by a headline from [Hackernews]
 In order to customize the plugin to your liking, you have to navigate to its directory (`~/.tmux/plugins/tmux-hackernews/` if you used TPM), and edit the `vars.conf` file.
 
 List of variables:
- * `browser` - Choose your browser by editing this variable. Simply enter the name of your browser as you would enter it in a terminal window. The plugin assumes that your browser takes a URL as an argument and opens it up in a new tab. Default browser is w3m, since it's terminal based, so it will work for people using tmux for ssh sessions, while it is also included in a lot of systems.
+ * `browser` - Choose your browser by editing this variable. Simply enter the name of your browser as you would enter it in a terminal window. The plugin assumes that your browser takes a URL as a single argument and opens it up in a new tab. If your browser needs an option to open the tab in your liking, you should add the option, it will be considered. If you need options *after* the url, then leave an issue and I will look into implementing that. If no browser is set, the keybind run xdg-open to open up the default browser.
  * `max_chars` - Specify the maximum character width you desire the headline field to take. Any headlines longer than this character width will be truncated with three dots in the end. Fixed width and dynamic width options might be implemented in a future update.
 
 ## Keybinds
@@ -50,7 +52,7 @@ List of variables:
 
 `Prefix + <` shows the previous headline.
 
-`Prefix + h` opens up a new tmux window with the current article displayed using the browser program specified in `vars.conf`, under the variable `browser`.
+`Prefix + h` opens up the link to the current headline on your system's browser.
 
 ## Planned Features
  * Switch from curl-ing the whole website to using the API. Will possibly allow for easy implementation of more than 30 headlines.
