@@ -8,26 +8,26 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
 index=`. $DIR/compute_index.sh`
 
-headline=`grep ^headline $DIR/../vars.conf | sed "s/.*=//g"`
+# if [ -r $DIR/../headlines.conf -a $index != 1 ]; then
+  # echo `sed "${index}q;d" $DIR/../headlines.conf`
+  # exit
+# fi
 
-p_index=`echo $headline | sed "s/\..*//g"`
+headlines=$(curl -s https://news.ycombinator.com | grep "<a.*class=\"storylink\"" | sed -e "s/<td.*storylink\">\|<\/a.*\|<td align.*div>\|<td align.*nofollow\">//g" -e "s/^ *//g")
 
-if [ $p_index == $index ]; then
-  echo $headline
+if [ -z "$headlines" ]
+then
+  echo $headlines
   exit
 fi
 
-headline=`curl -s https://news.ycombinator.com | grep "<a.*class=\"storylink\"" | sed -e "s/<td.*storylink\">\|<\/a.*\|<td align.*div>\|<td align.*nofollow\">//g" -e "s/^ *//g" -e "${index}q;d"`
+echo "$headlines" > $DIR/../headlines.conf
 
-if [ -z $headline ]; then
-  echo $headline
-  exit
-fi
+headline=`sed "${index}q;d" $DIR/../headlines.conf`
 
 max_chars=`grep max_chars $DIR/../vars.conf | sed "s/.*=//g"`
 
-if [ -n "${headline:$max_chars}" ]
-then
+if [ -n "${headline:$max_chars}" ]; then
   headline=${headline:0:$(($max_chars - 3))}'...'
 fi
 
