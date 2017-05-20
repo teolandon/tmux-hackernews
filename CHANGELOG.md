@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
+## 0.5.0 - 2017-05-20
+### Added
+ * [FILE] headlines.conf - stores a cache of all headlines and links for 2 hours. Not to be edited.
+### Changed
+ * `news.sh` behavior. Now uses `headlines.conf` to show headlines for two hours after it's modified. Done to reduce HTTP requests and have a more consistent display.
+ * `urls.sh` behavior. Now uses `headlines.conf` to pass URLs, so as to keep the URLs consistent with the headlines.
+### Removed
+ * `headline` variable from `vars.conf` file.
+
 ## 0.4.3 - 2017-05-17
 ### Changed
  * Changed default link hotkey to `Prefix + h` instead of `Prefix + C-h`, since C-h is a kinda iffy key with some terminals (seen as backspace). 

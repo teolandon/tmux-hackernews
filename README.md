@@ -36,7 +36,7 @@ set -g status-right ' #{headline} | %d/$m | %H:%M:%S '
 ```
 
 ### Formatting
-The headline format string should be substituted by a headline from [Hackernews](https://news.ycombinator.com). Headlines are cut off at a character limit specified in the file `vars.conf`, under the variable `max_chars`. Headlines to be shown are picked from the current top 30 stories in the frontpage, and cycle around in a period of 2 hours, meaning that the displayed headline increments every 4 minutes. Customization will be included in a future update.
+The headline format string should be substituted by a headline from [Hackernews](https://news.ycombinator.com). Headlines are cut off at a character limit specified in the file `vars.conf`, under the variable `max_chars`. Headlines to be shown are picked from the current top 30 stories in the frontpage every 2 hours, and cycle around until new ones get pulled, meaning that the displayed headline increments every 4 minutes. Customization will be included in a future update.
 
 ## Customization
 In order to customize the plugin to your liking, you have to navigate to its directory (`~/.tmux/plugins/tmux-hackernews/` if you used TPM), and edit the `vars.conf` file.
@@ -55,12 +55,12 @@ List of variables:
 ## Planned Features
  * Switch from curl-ing the whole website to using the API. Will possibly allow for easy implementation of more than 30 headlines.
  * Pulling headlines from other news sites or at least pages of ycombinator.
- * Cache whole list of headlines, so that the list doesn't update while the script cycles through it (causes duplicates). Possibly with a refresh keybind.
+ * Reload keybind?
+ * Remove some keybinds? (I feel like they're too many).
  * Got any new ideas for features? Leave them as an Issue in the Issues page!
 
 ## Credits
 This plugin is heavily inspired and modeled after [tmux-battery](https://github.com/tmux-plugins/tmux-battery).
 
 ## TODO
- * Acquire permission to model this file after the tmux-battery README.
- * Add **Customization** section in this README.
+ * Keep updating!
