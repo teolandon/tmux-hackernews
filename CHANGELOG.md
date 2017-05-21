@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
+## 0.5.2 - 2017-05-21
+### Added
+ * Support for text post links.
+
 ## 0.5.1 - 2017-05-20
 ### Changed
  * `browser` variable now doesn't need to be set to something. If empty, attempts to open up website in system's default browser.

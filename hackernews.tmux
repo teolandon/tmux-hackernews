@@ -5,7 +5,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
 # Uses news.sh to acquire current headline
 # then formats it, and replaces all #{headline}
-# instances with the formatted headline. 
+# instances with the formatted headline.
 
 headline="#(bash $DIR/scripts/news.sh)"
 
