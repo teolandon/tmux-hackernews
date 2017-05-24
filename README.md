@@ -65,4 +65,5 @@ List of variables:
 This plugin is heavily inspired and modeled after [tmux-battery](https://github.com/tmux-plugins/tmux-battery).
 
 ## TODO
+ * Use tmux variables instead of a file that contains the variables.
  * Keep updating!

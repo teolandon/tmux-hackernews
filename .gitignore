@@ -4,3 +4,4 @@
 # ignore changes on vars.conf and headlines.conf, they're config files, not meant to be updated just yet
 vars.conf
 headlines.conf
+Session.vim
