@@ -42,6 +42,7 @@ The headline format string should be substituted by a headline from [Hackernews]
 
 ## Customization
 `tmux-hackernews` uses tmux user options as customization variables. Simply set them to what you want in your `.tmux.conf` file, as such:
+
     set -g @var-name 'var-value'
 
 List of variables:
