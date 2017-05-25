@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
+## 0.5.3 - 2017-05-24
+### Changed
+ * `max_chars` variable removed from `vars.conf`, and moved to a tmux option, `@headline-max-chars`. This is the beginning of a migration from vars stored in a file to vars stored as tmux user options.
+
 ## 0.5.2 - 2017-05-21
 ### Added
  * Support for text post links.
@@ -20,7 +24,7 @@ All notable changes to this project will be documented in this file
 
 ## 0.4.3 - 2017-05-17
 ### Changed
- * Changed default link hotkey to `Prefix + h` instead of `Prefix + C-h`, since C-h is a kinda iffy key with some terminals (seen as backspace). 
+ * Changed default link hotkey to `Prefix + h` instead of `Prefix + C-h`, since C-h is a kinda iffy key with some terminals (seen as backspace).
 
 ## 0.4.2 - 2017-05-16
 ### Changed
@@ -61,7 +65,7 @@ All notable changes to this project will be documented in this file
 
 ## 0.1.0 - 2017-05-13
 ### Added
- * [FILE] hackernews.tmux - with basic functionality, replaces an instance of `#{headline}` in status-right, and replaces it with an execution call of news.sh 
+ * [FILE] hackernews.tmux - with basic functionality, replaces an instance of `#{headline}` in status-right, and replaces it with an execution call of news.sh
  * [FILE] news.sh - produces a different headline from the [Hackernews](https://news.ycombinator.com) frontpage, over the course of two hours -- that is, it changes headline every 4 minutes.
  * [FILE] vars.conf - for now useless, but will contain some variables for customization of the headline field
  * [FILE] .gitignore - to ignore .swp files

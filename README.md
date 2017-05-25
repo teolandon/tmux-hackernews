@@ -41,11 +41,12 @@ This will display the headline next to date and time, without any formatting.
 The headline format string should be substituted by a headline from [Hackernews](https://news.ycombinator.com). Headlines are cut off at a character limit specified in the file `vars.conf`, under the variable `max_chars`. Headlines to be shown are picked from the current top 30 stories in the frontpage every 2 hours, and cycle around until new ones get pulled, meaning that the displayed headline increments every 4 minutes. Customization will be included in a future update.
 
 ## Customization
-In order to customize the plugin to your liking, you have to navigate to its directory (`~/.tmux/plugins/tmux-hackernews/` if you used TPM), and edit the `vars.conf` file.
+`tmux-hackernews` uses tmux user options as customization variables. Simply set them to what you want in your `.tmux.conf` file, as such:
+    set -g @var-name 'var-value'
 
 List of variables:
- * `browser` - Choose your browser by editing this variable. Simply enter the name of your browser as you would enter it in a terminal window. The plugin assumes that your browser takes a URL as a single argument and opens it up in a new tab. If your browser needs an option to open the tab in your liking, you should add the option, it will be considered. If you need options *after* the url, then leave an issue and I will look into implementing that. If no browser is set, the keybind run xdg-open to open up the default browser.
- * `max_chars` - Specify the maximum character width you desire the headline field to take. Any headlines longer than this character width will be truncated with three dots in the end. Fixed width and dynamic width options might be implemented in a future update.
+ * `@hackernews-browser` - Choose your browser by editing this variable. The plugin assumes that your browser takes a URL as a single argument and opens it up in a new tab. If your browser needs an option to open the tab in your liking, you should add the option, it will be considered. If you need options *after* the url, then leave an issue and I will look into implementing that. Defaults to xdg-open.
+ * `@headline-max-chars` - Specify the maximum character width you desire the headline field to take. Any headlines longer than this character width will be truncated with three dots in the end. Fixed width and dynamic width options might be implemented in a future update. Defaults to 80.
 
 ## Keybinds
 `Prefix + >` shows the next headline.
@@ -66,4 +67,5 @@ This plugin is heavily inspired and modeled after [tmux-battery](https://github.
 
 ## TODO
  * Use tmux variables instead of a file that contains the variables.
+ * DRY out code, use a single script that loads all variables, and source it in every script that needs them.
  * Keep updating!

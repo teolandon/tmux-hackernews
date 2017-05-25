@@ -3,6 +3,14 @@
 # get current dir
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
-offset=`grep ^hacknews_offset $DIR/../vars.conf | sed "s/.*=//g"`
+offset=$(tmux show -gqv @hackernews-offset)
 
-  sed -i "s/hacknews_offset=${offset}/hacknews_offset=$((($offset-1)%30))/gi" $DIR/../vars.conf
+if [ -z $offset ]; then
+  tmux set -g @hackernews-offset '29'
+  offset=29
+  exit
+fi
+
+offset=$(($offset-1))
+
+tmux set -g @hackernews-offset $offset

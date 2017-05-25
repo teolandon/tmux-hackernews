@@ -3,7 +3,7 @@
 # get current dir
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
-index=`. $DIR/compute_index.sh`
+index=`. $DIR/index.sh`
 
 index=$((index+30))
 

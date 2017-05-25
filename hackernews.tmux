@@ -9,7 +9,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
 headline="#(bash $DIR/scripts/news.sh)"
 
-if [ -z $headline ]; then
+if [ -z "$headline" ]; then
   headline="Error acquiring headline"
 fi
 
@@ -26,6 +26,10 @@ format_status() { # Takes an argument and returns formatted
 tmux set-option -gq status-right "$(format_status "status-right")"
 
 tmux set-option -gq status-left "$(format_status "status-left")"
+
+# Set options, only if they're not already set (-o flag)
+tmux set-option -gqo @hackernews-offset 0
+tmux set-option -gqo @headline-max-chars 80
 
 # Keybinds; Feel free to customize them
 

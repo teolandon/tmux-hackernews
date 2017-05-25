@@ -3,6 +3,6 @@
 # get current dir
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
-browser=`grep ^browser $DIR/../vars.conf | sed "s/.*=//g"`
+browser=$(tmux show-option -gqv @hackernews-browser)
 
 echo $browser

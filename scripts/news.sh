@@ -6,13 +6,16 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 # Periodically print out
 # Top 10 Headlines from Hackernews
 
+# To be used instead of exit, to always remove the dummy file
+# used for dating the headlines.conf file
+
 clean_exit()
 {
   rm dummy
   exit
 }
 
-index=`. $DIR/compute_index.sh`
+index=`. $DIR/index.sh`
 
 # If headlines file exists and index is not 1, then just read from there
 touch -d '-2 hours' dummy
@@ -43,7 +46,11 @@ echo "$storylinks" >> $DIR/../headlines.conf
 
 headline=`sed "${index}q;d" $DIR/../headlines.conf`
 
-max_chars=`grep max_chars $DIR/../vars.conf | sed "s/.*=//g"`
+max_chars=$(tmux show-option -gqv @headline-max-chars)
+
+if [ -z $max_chars ]; then
+  max_chars=80
+fi
 
 if [ -n "${headline:$max_chars}" ]; then
   headline=${headline:0:$(($max_chars - 3))}'...'
