@@ -11,6 +11,6 @@ if [ -z $offset ]; then
   exit
 fi
 
-offset=$(($offset+1))
+offset=$((($offset+1)%30))
 
 tmux set -g @hackernews-offset $offset
