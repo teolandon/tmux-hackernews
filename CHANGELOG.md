@@ -3,7 +3,8 @@ All notable changes to this project will be documented in this file
 
 ## 0.5.3 - 2017-05-24
 ### Changed
- * `max_chars` variable removed from `vars.conf`, and moved to a tmux option, `@headline-max-chars`. This is the beginning of a migration from vars stored in a file to vars stored as tmux user options.
+ * Removed `vars.conf` and moved all vars to tmux user options.
+ * Updated README.md accordingly.
 
 ## 0.5.2 - 2017-05-21
 ### Added

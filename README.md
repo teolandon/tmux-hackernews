@@ -38,7 +38,7 @@ set -g status-right ' #{headline} | %d/$m | %H:%M:%S '
 This will display the headline next to date and time, without any formatting.
 
 ### Formatting
-The headline format string should be substituted by a headline from [Hackernews](https://news.ycombinator.com). Headlines are cut off at a character limit specified in the file `vars.conf`, under the variable `max_chars`. Headlines to be shown are picked from the current top 30 stories in the frontpage every 2 hours, and cycle around until new ones get pulled, meaning that the displayed headline increments every 4 minutes. Customization will be included in a future update.
+The headline format string should be substituted by a headline from [Hackernews](https://news.ycombinator.com). Headlines are cut off at a character limit specified in the tmux user option `@headline-max-chars`. Headlines to be shown are picked from the current top 30 stories in the frontpage every 2 hours, and cycle around until new ones get pulled, meaning that the displayed headline increments every 4 minutes. Customization will be included in a future update.
 
 ## Customization
 `tmux-hackernews` uses tmux user options as customization variables. Simply set them to what you want in your `.tmux.conf` file, as such:
