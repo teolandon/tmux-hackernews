@@ -33,8 +33,12 @@ tmux set-option -gqo @headline-max-chars 80
 
 # Keybinds; Feel free to customize them
 
-tmux bind \> run "$DIR/scripts/inc.sh"\\\; refresh-client -S
-tmux bind \< run "$DIR/scripts/dec.sh"\\\; refresh-client -S
+scroll=$(tmux show-option -gqv @hackernews-scroll)
+
+if [ "$scroll" = "true" ]; then
+  tmux bind \> run "$DIR/scripts/inc.sh"\\\; refresh-client -S
+  tmux bind \< run "$DIR/scripts/dec.sh"\\\; refresh-client -S
+fi
 
 browser=$($DIR/scripts/browser.sh)
 
