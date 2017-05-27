@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
+## 0.5.5 - 2017-05-27
+### Changed
+ * Fixed some bugs regarding run-shell, xdg-open and i3wm.
+
 ## 0.5.4 - 2017-05-26
 ### Changed
  * Scroll keybinds off by default. They are enabled through the tmux user option

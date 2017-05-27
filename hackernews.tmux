@@ -47,5 +47,5 @@ if [ -n "$browser" ]; then
     tmux bind h new-window "$browser \$(bash $DIR/scripts/urls.sh)"
   fi
 elif which xdg-open > /dev/null; then
-  tmux bind h run-shell "xdg-open \$(bash $DIR/scripts/urls.sh)"
+  tmux bind h new-window -d "xdg-open \$(bash $DIR/scripts/urls.sh)"
 fi

@@ -1,7 +1,8 @@
 # vim .swp files
 *.swp
+*.swo
 
-# ignore changes on vars.conf and headlines.conf, they're config files, not meant to be updated just yet
-vars.conf
+# ignore changes on vars.conf and headlines.conf, they're config files, not
+# meant to be updated just yet
 headlines.conf
 Session.vim
