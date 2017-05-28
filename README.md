@@ -32,7 +32,7 @@ or wherever your tmux config file is located at.
 
 ## Usage and formatting
 ### Usage
-Include the format string `${headline}` somewhere in status-right or
+Include the format string `#{headline}` somewhere in status-right or
 status-left, and they should render as the current headline. Example:
 
 ```
