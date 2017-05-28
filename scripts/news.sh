@@ -2,6 +2,10 @@
 
 # get current dir
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
+PARENT="$DIR/.."
+
+# get variables
+. $DIR/variables.sh
 
 # Periodically print out
 # Top 10 Headlines from Hackernews
@@ -11,14 +15,12 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
 clean_exit()
 {
-  rm dummy
+  rm "$DIR/dummy"
   exit
 }
 
-index=`. $DIR/index.sh`
-
 # If headlines file exists and index is not 1, then just read from there
-touch -d '-2 hours' dummy
+touch -d '-2 hours' $DIR/dummy
 if [ -r $DIR/../headlines.conf -a $DIR/../headlines.conf -nt dummy ]; then
   echo $index. `sed "${index}q;d" $DIR/../headlines.conf`
   clean_exit
@@ -33,7 +35,7 @@ headlines=$(echo "$request" | sed -e "s/<td.*storylink\">\|<\/a.*\|<td align.*di
 # If nothing returns, then simply return NULL
 if [ -z "$headlines" ]
 then
-  echo $headlines
+  echo "Error getting headline"
   clean_exit
 fi
 
@@ -55,8 +57,6 @@ fi
 if [ -n "${headline:$max_chars}" ]; then
   headline=${headline:0:$(($max_chars - 3))}'...'
 fi
-
-sed -i "s/headline=.*/headline=${index}. ${headline}/g" $DIR/../vars.conf
 
 echo ${index}. ${headline}
 clean_exit

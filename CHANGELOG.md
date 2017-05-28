@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
+## 0.5.6 - 2017-05-28
+### Changed
+ * Fixed some bugs regarding run-shell, xdg-open and i3wm.
+
 ## 0.5.5 - 2017-05-27
 ### Changed
  * Fixed some bugs regarding run-shell, xdg-open and i3wm.

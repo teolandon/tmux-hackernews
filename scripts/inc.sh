@@ -3,7 +3,8 @@
 # get current dir
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
-offset=$(tmux show -gqv @hackernews-offset)
+# get variables
+. $DIR/variables.sh
 
 if [ -z $offset ]; then
   tmux set -g @hackernews-offset '1'

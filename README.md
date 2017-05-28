@@ -57,11 +57,12 @@ included in a future update.
 
 ## Customization
 `tmux-hackernews` uses tmux user options as customization variables. Simply set
-them to what you want in your `.tmux.conf` file, as such:
+them to what you want in your `.tmux.conf` file. For example, if you want to set
+`@var-name` to `var-value`, write this:
 
     set -g @var-name 'var-value'
 
-List of variables:
+### List of variables
  * `@hackernews-browser` - Choose your browser by editing this variable. The
    plugin assumes that your browser takes a URL as a single argument and opens
 it up in a new tab. If your browser needs an option to open the tab in your
@@ -95,13 +96,13 @@ Let me know if there are any conflicts with other popular tmux plugins.
    for easy implementation of more than 30 headlines.
  * Pulling headlines from other news sites or at least pages of ycombinator.
  * Reload keybind?
- * Got any new ideas for features? Leave them as an Issue in the Issues page!
+ * Custom time period to traverse through all headlines.
+ * Got any new ideas for features? Leave them as an enhancement in the Issues page!
 
 ## Credits
 This plugin is heavily inspired and modeled after
 [tmux-battery](https://github.com/tmux-plugins/tmux-battery).
 
 ## TODO
- * DRY out code, use a single script that loads all variables, and source it in
-   every script that needs them.
+ * Figure out if you can retroactively apply release versions on github.
  * Keep updating!
