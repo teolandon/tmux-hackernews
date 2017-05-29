@@ -63,18 +63,18 @@ them to what you want in your `.tmux.conf` file. For example, if you want to set
     set -g @var-name 'var-value'
 
 ### List of variables
- * `@hackernews-browser` - Choose your browser by editing this variable. The
-   plugin assumes that your browser takes a URL as a single argument and opens
-it up in a new tab. If your browser needs an option to open the tab in your
-liking, you should add the option, it will be considered. If you need options
-*after* the url, then leave an issue and I will look into implementing that.
-Defaults to xdg-open.
- * `@headline-max-chars` - Specify the maximum character width you desire the
-   headline field to take. Any headlines longer than this character width will
-be truncated with three dots in the end. Fixed width and dynamic width options
-might be implemented in a future update. Defaults to 80.
- * `@hackernews-scroll` - Enables scroll keybinds when set to 'true', disables
-   them when unset or set to anything else.
+* `@hackernews-browser` - Choose your browser by editing this variable. The
+  plugin assumes that your browser takes a URL as a single argument and opens
+  it up in a new tab. If your browser needs an option to open the tab in your
+  liking, you should add the option, it will be considered. If you need options
+  *after* the url, then leave an issue and I will look into implementing that.
+  Defaults to xdg-open.
+* `@headline-max-chars` - Specify the maximum character width you desire the
+  headline field to take. Any headlines longer than this character width will
+  be truncated with three dots in the end. Fixed width and dynamic width options
+  might be implemented in a future update. Defaults to 80.
+* `@hackernews-scroll` - Enables scroll keybinds when set to 'true', disables
+  them when unset or set to anything else.
 
 ## Keybinds
 ### Main
@@ -85,24 +85,24 @@ browser.
 These keybinds are enabled by setting the tmux option `@hackernews-scroll` to
 'true'.
 
- - `Prefix + >` shows the next headline.
+- `Prefix + >` shows the next headline.
 
- - `Prefix + <` shows the previous headline.
+- `Prefix + <` shows the previous headline.
 
 Let me know if there are any conflicts with other popular tmux plugins.
 
 ## Planned Features
- * Switch from curl-ing the whole website to using the API. Will possibly allow
-   for easy implementation of more than 30 headlines.
- * Pulling headlines from other news sites or at least pages of ycombinator.
- * Reload keybind?
- * Custom time period to traverse through all headlines.
- * Got any new ideas for features? Leave them as an enhancement in the Issues page!
+* Switch from curl-ing the whole website to using the API. Will possibly allow
+  for easy implementation of more than 30 headlines.
+* Pulling headlines from other news sites or at least pages of ycombinator.
+* Reload keybind?
+* Custom time period to traverse through all headlines.
+* Got any new ideas for features? Leave them as an enhancement in the Issues page!
 
 ## Credits
 This plugin is heavily inspired and modeled after
 [tmux-battery](https://github.com/tmux-plugins/tmux-battery).
 
 ## TODO
- * Figure out if you can retroactively apply release versions on github.
- * Keep updating!
+* Figure out if you can retroactively apply release versions on github.
+* Keep updating!
