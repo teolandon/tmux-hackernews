@@ -21,7 +21,7 @@ clean_exit()
 
 # If headlines file exists and index is not 1, then just read from there
 touch -d '-2 hours' $DIR/dummy
-if [ -r $DIR/../headlines.conf -a $DIR/../headlines.conf -nt dummy ]; then
+if [ -r $DIR/../headlines.conf -a $DIR/../headlines.conf -nt $DIR/dummy ]; then
   echo $index. `sed "${index}q;d" $DIR/../headlines.conf`
   clean_exit
 fi
