@@ -75,14 +75,15 @@ them to what you want in your `.tmux.conf` file. For example, if you want to set
 * `@hackernews-scroll` - Enables scroll keybinds when set to 'true', disables
   them when unset or set to anything else.
 * `@hackernews-period` - Custom period for the 30 headlines to be scrolled
-  through. In hours. Several hour values will miss out on the last few headlines
-  due to bash not being able to work with float numbers, and I'm not currently
-  interested in implementing a fix.
+  through. In hours. Several hour values will miss out on the last few
+  headlines, and will act weirdly when passing midnight, due to bash not being
+  able to work with float numbers, and I'm not currently interested in
+  implementing a fix.
 
 ## Keybinds
 ### Main
- - `Prefix + h` opens up the link to the current headline on your system's
-browser.
+- `Prefix + h` opens up the link to the current headline on your system's
+  browser.
 
 ### Optional
 These keybinds are enabled by setting the tmux option `@hackernews-scroll` to
