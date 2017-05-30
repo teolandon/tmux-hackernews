@@ -18,12 +18,13 @@ offset=$(read_tmux_var @hackernews-offset 0)
 max_chars=$(read_tmux_var @headline-max-chars 80)
 browser=$(read_tmux_var @hackernews-browser)
 scroll=$(read_tmux_var @hackernews-scroll false)
+period=$(read_tmux_var @hackernews-period 2)
 
-hours=`date +%H`
-hours=${hours#0} # remove leading 0s
-minutes=`date +%M`
-minutes=${minutes#0} # remove leading 0s
+curr_hour=`date +%H`
+curr_hour=${curr_hour#0} # remove leading 0s
+curr_minute=`date +%M`
+curr_minute=${curr_minute#0} # remove leading 0s
 
-index=$((15*($hours%2)+($minutes/4)+$offset))
+index=$(((30/$period)*($curr_hour%$period)+($curr_minute/(2*$period))+$offset))
 
 index=$(((index%30)+1))

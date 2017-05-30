@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
+## 0.7.0 - 2017-05-20
+### Added
+* `@hackernews-period` option to have a custom period for the cycle of the 30
+  headlines.
+
 ## 0.6.0 - 2017-05-28
 ### Changed
 * Scripts completely restructured, `variables.sh` now contains important

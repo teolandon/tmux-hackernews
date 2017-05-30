@@ -30,7 +30,8 @@ fi
 
 request=`curl -s https://news.ycombinator.com | grep "<a.*class=\"storylink\""`
 
-headlines=$(echo "$request" | sed -e "s/<td.*storylink\">\|<\/a.*\|<td align.*div>\|<td align.*nofollow\">//g" -e "s/^ *//g")
+headlines=$(echo "$request" | sed -e "s/<td.*storylink\">\|<\/a.*\|<td align.*d\
+iv>\|<td align.*nofollow\">//g" -e "s/^ *//g")
 
 # If nothing returns, then simply return NULL
 if [ -z "$headlines" ]
@@ -40,7 +41,8 @@ then
 fi
 
 # links to append
-storylinks=$(echo "$request" | sed -e "s/.*<td class=\"title\"><a href=\"//g" -e "s/\" class=\"storylink\">.*//g")
+storylinks=$(echo "$request" | sed -e "s/.*<td class=\"title\"><a href=\"//g" -\
+e "s/\" class=\"storylink\">.*//g")
 
 # Write to the headlines file
 echo "$headlines" > $DIR/../headlines.conf

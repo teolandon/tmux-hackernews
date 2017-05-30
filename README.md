@@ -51,9 +51,8 @@ The headline format string should be substituted by a headline from
 character limit specified in the tmux user option `@headline-max-chars`.
 
 Headlines to be shown are picked from the current top 30 stories in the
-frontpage every 2 hours, and cycle around until new ones get pulled, meaning
-that the displayed headline increments every 4 minutes. Customization will be
-included in a future update.
+frontpage every 2 hours by default, and cycle around until new ones get pulled,
+meaning that the displayed headline increments every 4 minutes.
 
 ## Customization
 `tmux-hackernews` uses tmux user options as customization variables. Simply set
@@ -75,6 +74,10 @@ them to what you want in your `.tmux.conf` file. For example, if you want to set
   might be implemented in a future update. Defaults to 80.
 * `@hackernews-scroll` - Enables scroll keybinds when set to 'true', disables
   them when unset or set to anything else.
+* `@hackernews-period` - Custom period for the 30 headlines to be scrolled
+  through. In hours. Several hour values will miss out on the last few headlines
+  due to bash not being able to work with float numbers, and I'm not currently
+  interested in implementing a fix.
 
 ## Keybinds
 ### Main
@@ -96,8 +99,8 @@ Let me know if there are any conflicts with other popular tmux plugins.
   for easy implementation of more than 30 headlines.
 * Pulling headlines from other news sites or at least pages of ycombinator.
 * Reload keybind?
-* Custom time period to traverse through all headlines.
-* Got any new ideas for features? Leave them as an enhancement in the Issues page!
+* Got any new ideas for features? Leave them as an enhancement in the Issues
+  page!
 
 ## Credits
 This plugin is heavily inspired and modeled after

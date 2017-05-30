@@ -31,6 +31,7 @@ tmux set-option -gq status-left "$(format_status "status-left")"
 tmux set-option -gqo @hackernews-offset 0
 tmux set-option -gqo @headline-max-chars 80
 tmux set-option -gqo @hackernews-scroll false
+tmux set-option -gqo @hackernews-period 2
 
 # Keybinds; Feel free to customize them
 
