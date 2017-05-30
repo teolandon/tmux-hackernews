@@ -1,7 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
-## 0.7.0 - 2017-05-20
+## 0.7.1 - 2017-05-30
+### Changed
+* `@headline-max-chars` changed to `@hackernews-max-chars` to keep variable
+  naming consistent.
+
+## 0.7.0 - 2017-05-30
 ### Added
 * `@hackernews-period` option to have a custom period for the cycle of the 30
   headlines.

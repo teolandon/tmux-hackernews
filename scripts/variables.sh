@@ -15,7 +15,7 @@ read_tmux_var()
 }
 
 offset=$(read_tmux_var @hackernews-offset 0)
-max_chars=$(read_tmux_var @headline-max-chars 80)
+max_chars=$(read_tmux_var @hackernews-max-chars 80)
 browser=$(read_tmux_var @hackernews-browser)
 scroll=$(read_tmux_var @hackernews-scroll false)
 period=$(read_tmux_var @hackernews-period 2)

@@ -68,7 +68,7 @@ them to what you want in your `.tmux.conf` file. For example, if you want to set
   liking, you should add the option, it will be considered. If you need options
   *after* the url, then leave an issue and I will look into implementing that.
   Defaults to xdg-open.
-* `@headline-max-chars` - Specify the maximum character width you desire the
+* `@hackernews-max-chars` - Specify the maximum character width you desire the
   headline field to take. Any headlines longer than this character width will
   be truncated with three dots in the end. Fixed width and dynamic width options
   might be implemented in a future update. Defaults to 80.
