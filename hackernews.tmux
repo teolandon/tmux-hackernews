@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # get current dir
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
@@ -48,5 +48,5 @@ if [ -n "$browser" ]; then
     tmux bind h new-window "$browser \$(bash $DIR/scripts/urls.sh)"
   fi
 elif which xdg-open > /dev/null; then
-  tmux bind h new-window -d "xdg-open \$(bash $DIR/scripts/urls.sh)"
+  tmux bind h new-window -d "echo xdg-open \\\$\(. $DIR/scripts/urls.sh\) | bash"
 fi
