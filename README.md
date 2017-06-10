@@ -48,7 +48,7 @@ your selected browser.
 ### Formatting
 The headline format string should be substituted by a headline from
 [Hackernews](https://news.ycombinator.com). Headlines are cut off at a
-character limit specified in the tmux user option `@headline-max-chars`.
+character limit specified in the tmux user option `@hackernews-max-chars`.
 
 Headlines to be shown are picked from the current top 30 stories in the
 frontpage every 2 hours by default, and cycle around until new ones get pulled,
@@ -99,7 +99,6 @@ Let me know if there are any conflicts with other popular tmux plugins.
 * Switch from curl-ing the whole website to using the API. Will possibly allow
   for easy implementation of more than 30 headlines.
 * Pulling headlines from other news sites or at least pages of ycombinator.
-* Reload keybind?
 * Got any new ideas for features? Leave them as an enhancement in the Issues
   page!
 
